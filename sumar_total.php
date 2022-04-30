@@ -69,9 +69,8 @@ $aProducto[] = array(
                             $contador = 0;
                             $sumatoria = 0;
 
-                            while ($contador < count($aProducto)){
-
-                            
+                            while ($contador < count($aProducto))
+                            {
                             ?>
                             <tr>
                                 <td><?php echo $aProducto[$contador]["Nombre"]; ?></td> <!-- td es columna-->
