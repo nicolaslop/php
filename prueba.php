@@ -5,3 +5,4 @@ if ($Valor == 1 || $Valor == 3 || $Valor == 5){
 } else {
     echo " El numero $Valor es par";
 }
+
