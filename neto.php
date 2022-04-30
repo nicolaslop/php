@@ -5,11 +5,9 @@ error_reporting (E_ALL);
 ?>
 <?php
 function calcularNeto($bruto,$cargas){
-    return $neto = $bruto - ($bruto* 0.17);
+    return $bruto - ($bruto* 0.17);
 }
 
 echo"El sueldo neto es $" . calcularNeto(50000,0.17);
-
-
 
 ?>
