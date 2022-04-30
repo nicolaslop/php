@@ -1,4 +1,10 @@
 <?php
+ini_set( "display_errors", 1);
+ini_set( "display_startup_errors",1);
+error_reporting (E_ALL);
+?>
+
+<?php
 $Fecha = date("d/m/y");
 $Nombre = "nicolas lopez orozco";
 $Edad = 27;
