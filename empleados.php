@@ -3,39 +3,17 @@
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
-
+?>
+<?php
 $aEmpleados = array();
-$aEmpleados = array("dni" => 33300123, "Nombre" => "DAVID GARCIA", "Bruto" => 85000.30);
-$aEmpleados = array("dni" => 40874456, "Nombre" => "ANA DEL VALLE", "Bruto" => 90000);
-$aEmpleados = array("dni" => 67567565, "Nombre" => "ANDRES PEREZ", "Bruto" => 90000);
-$aEmpleados = array("dni" => 75744545, "Nombre" => "VICTORIA LUZ", "Bruto" => 90000);
-function calcularNeto($bruto)
-[
-    return $bruto - $bruto * 0.17;
-]
-/*
-$aPacientes = array();
-$aPacientes[] = array(
-    "DNI" => "33300123",
-    "Nombre y Apellido" => "DAVID GARCIA",
-     "Sueldo" => "70.550.25",
-);
-$aPacientes[] = array(
-    "DNI" => "40874456",
-    "Nombre y Apellido" => "ANA DEL VALLE",
-    "Sueldo" => "74.700.00",
-);
-$aPacientes[] = array(
-    "DNI" => "67567565",
-    "Nombre y Apellido" => "ANDRES PEREZ",
-    "Sueldo" => "83.000.00", 
-);
-$aPacientes[] = array(
-    "DNI" => "75744545",
-    "Nombre y Apellido" => "VICTORIA LUZ",
-    "Sueldo" => "58.100.00",
-);*/
+$aEmpleados = array("dni" => 33300123, "nombre" => "david garcia", "bruto" => 85000.30);
+$aEmpleados = array("dni" => 40874456, "nombre" => "ana del valle", "bruto" => 90000);
+$aEmpleados = array("dni" => 67567565, "nombre" => "andres perez", "ruto" => 1000000);
+$aEmpleados = array("dni" => 75744545, "nombre" => "victoria luz", "bruto" => 70000);
+function calcularNeto($bruto){
 
+    return $bruto - $bruto * 0.17;
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,26 +39,26 @@ $aPacientes[] = array(
                         <div>
                             <tr>
                                 <th>DNI</th> <!-- td es fila-->
-                                <th>Nombre y Apeliido</th>
+                                <th>Nombre</th>
                                 <th>Sueldo</th>
                             </tr>
-                            <?php forreach ($aEmpleados as $empleado); {
-                                ?>
-                            }
+                            <?php for ( $i=0; $i<count($aEmpleados);$i++ ) {
                             
+                            ?>
                             <tr>
-                                <td><?php echo $aEmpleados[$i]["DNI"]; ?></td> <!-- td es columna-->
-                                <td><?php echo mb_strtoupper($aEmpleados[$i]["Nombre"]); ?></td>
-                                <td><?php 
-                                $importe = calcularNeto($empleado["bruto"]);
-                                echo number_format($importe,2,",","."); ?></td>
+                                <td><?php echo $aEmpleados[$i]["dni"]; ?></td> <!-- td es columna-->
+                                <td><?php echo mb_strtoupper($aEmpleados[$i]["nombre"]); ?></td> <!-- mb_strtoupper= sirve para mayuscula-->
+                                <td><?php echo number_format(CalcularNeto($aEmpleados[$i]["bruto"]),2,",",".");?></td>
                             </tr>
                             <?php
-                            
-                            }?>    
+                            }
+                            ?>    
 
                         </div>
                     </table>   
+                </div>
+                <div class="col-12">
+                    <p>cantidad de empleados activos: <?php  echo count($aEmpleados);?></p>
                 </div>
             </div>
 
