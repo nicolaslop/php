@@ -60,11 +60,13 @@ $aPacientes[] = array(
                                 <th>Peso</th>
                             </tr>
                             <?php
-
+                                //foreach = por cada.. for = para.. while=
                             foreach ($aPacientes as $pos => $aPaciente){ //comienza el bucle
                                 //existen diferesntes tipos de bucle
-                            
+                                //as = como...
                             ?>
+                            
+
                             <tr>
                                 <td><?php echo $aPaciente ["DNI"]; ?></td> <!-- td es columna-->
                                 <td><?php echo $aPaciente ["Nombre y Apellido"]; ?></td>
@@ -73,7 +75,7 @@ $aPacientes[] = array(
                             </tr>
                             <?php
                             
-                            }?>    
+                            } ?>    
 
                         </div>
                     </table>   

@@ -3,14 +3,14 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 if($_POST){/* si es postback*/
-    $USUARIO =$_POST["txtNombre"];
+    $NOMBRE =$_POST["txtNombre"];
     $CLAVE =$_POST["txtClave"];
 }
 
     //si usuario y clave son distintos de vacio entonce:
     // redireccionar a acceso-confirmado.php
-    if($Nombre != "" && $CLAVE != "" ){
-    header("location:formato-confirmado.php");
+    if($NOMBRE!="" && $CLAVE != "" ){
+        header("location:formato-confirmado.php");
     }
     else{
         $mensaje="valido para usuario registrado";
