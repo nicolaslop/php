@@ -3,20 +3,18 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 if($_POST){/* si es postback*/
-    $NOMBRE =$_POST["txtNombre"];
-    $CLAVE =$_POST["txtClave"];
-}
-
+    $nombre =$_POST["txtNombre"];
+    $clave =$_POST["txtClave"];
+ }
     //si usuario y clave son distintos de vacio entonce:
     // redireccionar a acceso-confirmado.php
-    if($NOMBRE!="" && $CLAVE != "" ){
+    if($nombre!="" && $clave != "" ){
         header("location:formato-confirmado.php");
-    }
-    else{
+    } else{
         $mensaje="valido para usuario registrado";
-    
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,8 +36,7 @@ if($_POST){/* si es postback*/
             </div>
             <div class="row">
                 <div class="col-12 ">
-                    <?php if (isset($mensaje)){ 
-                    ?>
+                    <?php if (isset($mensaje)){?>
                 <div class="alert alert-danger" role="alert">
                         <?php echo $mensaje?>
                         </div>
