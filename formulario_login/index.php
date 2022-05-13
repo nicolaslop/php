@@ -3,8 +3,8 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 if($_POST){/* si es postback*/
-    $nombre =$_POST["txtNombre"];
-    $clave =$_POST["txtClave"];
+    $nombre=$_POST["txtNombre"];
+    $clave=$_POST["txtClave"];
  }
     //si usuario y clave son distintos de vacio entonce:
     // redireccionar a acceso-confirmado.php

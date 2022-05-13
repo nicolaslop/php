@@ -5,8 +5,17 @@ error_reporting (E_ALL);
 ?>
 
 <?php
-$array = array(1, 2, 3, 4);
-foreach ($array as &$valor) {
-    $valor = $valor * 2;
+$numeros = array(1, 2, 3, 4);
+foreach ($numeros as $valor) {
+    echo $valor . "<br>";
 }
+
+
+?>
+<?php
+/*
+for ($i=10;  $i > 1; $i--) { 
+    echo $i . "<br>";
+}
+*/
 ?>
