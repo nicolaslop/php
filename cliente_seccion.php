@@ -3,7 +3,13 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
+session_start();//indica que utilizaremos variables de session
+
+if(!isset($_SESSION["listadoClientes"])){
+    $_SESSION["listadoClientes"] = array();
+}
 if ($_POST){
+    if(isset($_POST["btnAgregar"])){
     $Nombre = $_POST["txtNombre"];
     $Dni = $_POST["txtDni"];
     $Telefono = $_POST["txtTelefono"];
@@ -15,6 +21,10 @@ if ($_POST){
                     "edad" => $Edad);
 
     $_SESSION["listadoClientes"] [] =$cliente;
+    } else if(isset($_POST["btaEliminar"])){
+        session_destroy();
+        header("location:cliente_seccion.php");
+    }
 }
 
 ?>
@@ -57,8 +67,8 @@ if ($_POST){
                             <label for="">Edad:*</label>
                             <input type="text" name="txtEdad" id="txtEdad" class="form-control my-2" require>
                         
-                            <button type="submit" name="btaAgregar" class="btn btn-primary text-white mx-2">ENVIAR</button>
-                            <button type="submit" name="btaEliminar" class="btn btn-danger text-white mx-2">ENVIAR</button>
+                            <button type="submit" name="btnAgregar" class="btn bg-primary text-white mx-2">ENVIAR</button>
+                            <button type="submit" name="btaEliminar" class="btn bg-danger text-white mx-2">ELIMINAR</button>
                         
                 </form>
             </div>
@@ -66,17 +76,18 @@ if ($_POST){
                 <table class="table table-bordered shadow-border">
                     <thead>
                         <tr> 
-                             <th>Nombre</th>
-                            <th>Dni</th>
-                            <th>Telefono</th>
-                            <th>Edad</th>
+                             <th>NOMBRE</th>
+                            <th>DNI</th>
+                            <th>TELEFONO</th>
+                            <th>EDAD</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $_SESSION="0";
-                        foreach($_SESSION["listadoClientes"] as $cliente)
-                        {
+                        
+                        foreach($_SESSION["listadoClientes"] as $cliente);
+                        { 
+                            
                         ?>
                         <tr>
                             <td><?php echo $cliente["nombre"];?></td>
