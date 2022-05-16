@@ -6,12 +6,13 @@ error_reporting(E_ALL);
 ?>
 <?php
 $aEmpleados = array();
-$aEmpleados = array("dni" => 33300123, "nombre" => "david garcia", "bruto" => 85000.30);
-$aEmpleados = array("dni" => 40874456, "nombre" => "ana del valle", "bruto" => 90000);
-$aEmpleados = array("dni" => 67567565, "nombre" => "andres perez", "ruto" => 1000000);
-$aEmpleados = array("dni" => 75744545, "nombre" => "victoria luz", "bruto" => 70000);
-function calcularNeto($bruto){
+$aEmpleados [] = array("dni" => 33300123, "nombre" => "david garcia", "bruto" => 85000.30);
+$aEmpleados []= array("dni" => 40874456, "nombre" => "ana del valle", "bruto" => 90000);
+$aEmpleados []= array("dni" => 67567565, "nombre" => "andres perez", "bruto" => 1000000);
+$aEmpleados []= array("dni" => 75744545, "nombre" => "victoria luz", "bruto" => 70000);
 
+function calcularNeto($bruto)
+{
     return $bruto - $bruto * 0.17;
 }
 ?>
@@ -42,13 +43,15 @@ function calcularNeto($bruto){
                                 <th>Nombre</th>
                                 <th>Sueldo</th>
                             </tr>
-                            <?php for ( $i=0; $i<count($aEmpleados);$i++ ) {
-                            
+                            <?php
+                             foreach ($aEmpleados as $empleado)
+                             {   
                             ?>
                             <tr>
-                                <td><?php echo $aEmpleados[$i]["dni"]; ?></td> <!-- td es columna-->
-                                <td><?php echo mb_strtoupper($aEmpleados[$i]["nombre"]); ?></td> <!-- mb_strtoupper= sirve para mayuscula-->
-                                <td><?php echo number_format(CalcularNeto($aEmpleados[$i]["bruto"]),2,",",".");?></td>
+                                <td><?php echo $empleado["dni"]; ?></td> <!-- td es columna-->
+                                <td><?php echo mb_strtoupper($empleado["nombre"]); ?></td> <!-- mb_strtoupper= sirve para mayuscula-->
+                                <td><?php $importe=CalcularNeto($empleado["bruto"]);
+                                echo number_format($importe,2,",",".");?></td>
                             </tr>
                             <?php
                             }

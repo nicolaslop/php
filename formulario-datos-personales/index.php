@@ -48,3 +48,13 @@
     </main>
 </body>
 </html>
+
+
+} else if(isset($_POST["btaEliminar"])){
+        session_destroy();
+        header("location:cliente_seccion.php");
+    }
+
+
+    if ($_POST){
+    if(isset($_POST["btnAgregar"])){

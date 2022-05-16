@@ -7,6 +7,7 @@ session_start();//indica que utilizaremos variables de session
 
 if(!isset($_SESSION["listadoClientes"])){
     $_SESSION["listadoClientes"] = array();
+   
 }
 if ($_POST){
     if(isset($_POST["btnAgregar"])){
@@ -54,18 +55,18 @@ if ($_POST){
                    
                         
                             <label for="">Nombre:*</label>
-                            <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2" require>
+                            <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2">
 
                             <label for="">Dni:*</label>
-                            <input type="text" name="txtDni" id="txtDni" class="form-control my-2" require>
+                            <input type="text" name="txtDni" id="txtDni" class="form-control my-2">
                         
                         
                             <label for="">Telefono:*</label>
-                            <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2" require>
+                            <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2">
                         
     
                             <label for="">Edad:*</label>
-                            <input type="text" name="txtEdad" id="txtEdad" class="form-control my-2" require>
+                            <input type="text" name="txtEdad" id="txtEdad" class="form-control my-2">
                         
                             <button type="submit" name="btnAgregar" class="btn bg-primary text-white mx-2">ENVIAR</button>
                             <button type="submit" name="btaEliminar" class="btn bg-danger text-white mx-2">ELIMINAR</button>
@@ -84,7 +85,7 @@ if ($_POST){
                     </thead>
                     <tbody>
                         <?php
-                        
+
                         foreach($_SESSION["listadoClientes"] as $cliente);
                         { 
                             
