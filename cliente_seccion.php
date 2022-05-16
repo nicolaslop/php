@@ -86,7 +86,7 @@ if ($_POST){
                     <tbody>
                         <?php
 
-                        foreach($_SESSION["listadoClientes"] as $cliente);
+                        foreach  ($_SESSION["listadoClientes"] as $cliente);
                         { 
                             
                         ?>
