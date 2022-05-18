@@ -86,9 +86,9 @@ if ($_POST){
                     <tbody>
                         <?php
 
-                        foreach  ($_SESSION["listadoClientes"] as $cliente);
-                        { 
-                            
+                        foreach  ($_SESSION["listadoClientes"] as $cliente)
+                        :
+    
                         ?>
                         <tr>
                             <td><?php echo $cliente["nombre"];?></td>
@@ -97,7 +97,7 @@ if ($_POST){
                             <td><?php echo $cliente["edad"];?></td>
                         </tr>
                         <?php 
-                        }
+                        endforeach
                         ?>
 
                     </tbody>
