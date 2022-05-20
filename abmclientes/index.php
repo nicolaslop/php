@@ -1,35 +1,3 @@
-<?php
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ALL);
-
-session_start();//indica que utilizaremos variables de session
-
-if(!isset($_SESSION["listadoClientes"])){
-    $_SESSION["listadoClientes"] = array();
-   
-}
-if ($_POST){
-    if(isset($_POST["btnAgregar"])){
-    $Nombre = $_POST["txtNombre"];
-    $Dni = $_POST["txtDni"];
-    $Telefono = $_POST["txtTelefono"];
-    $Edad = $_POST["txtCorreo"];
-    
-    $cliente =array(
-                    "nombre" => $Nombre,
-                    "dni" => $Dni,
-                    "telefono"=> $Telefono,
-                    "edad" => $Edad);
-
-    $_SESSION["listadoClientes"] [] =$cliente;
-    } else if(isset($_POST["btaEliminar"])){
-        session_destroy();
-        header("location:cliente_seccion.php");
-    }
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -55,52 +23,38 @@ if ($_POST){
                 <form method="POST" action="">
                    
                         
-                            <label for="">Nombre:*</label>
-                            <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2">
+                        <label for="">Nombre:*</label>
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2">
 
-                            <label for="">Dni:*</label>
-                            <input type="text" name="txtDni" id="txtDni" class="form-control my-2">
-                        
-                        
-                            <label for="">Telefono:*</label>
-                            <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2">
-                        
+                        <label for="">Dni:*</label>
+                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2" require>
+                         
+                        <label for="">Telefono:*</label>
+                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2"require>
     
-                            <label for="">correo:*</label>
-                            <input type="email" name="txtCorreo" id="txtCorreo" class="form-control my-2">
+                        <label for="">correo:*</label>
+                        <input type="email" name="txtCorreo" id="txtCorreo" class="form-control my-2"require>
+                        <label for="">archivo adjunto</label>
+                        <input type="file" name="archivo" id="archivo" accept=".doc,.docx,.pdf">
+                        <p>archivos admitidos: "doc.docx.pdf"</p>
                         
-                            <button type="submit" name="btnAgregar" class="btn bg-primary text-white mx-2">GUARDAR</button>
+                        
+                        <button type="submit" name="btnAgregar" class="btn bg-primary text-white mx-2">GUARDAR</button>
+                        <button type="reset" name="btnEliminar" class="btn bg-danger text-white mx-2">ELIMINAR</button>
                 </form>
             </div>
             <div class="col-6 sm-5 py-4">
                 <table class="table table-bordered shadow-border">
                     <thead>
                         <tr> 
-                             
-                             <th>NOMBRE</th>
+                             <th>IMAGEN</th>
                              <th>DNI</th>
-                             <th>TELEFONO</th>
-                             <th>EDAD</th>
-                             <th>ACCION</th>
+                             <th>NOMBRE</th>
+                             <th>CORREO</th>
+                             <th>ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-
-                        foreach  ($_SESSION["listadoClientes"] as $cliente)
-                        :
-    
-                        ?>
-                        <tr>
-                            
-                            <td><?php echo $cliente["nombre"];?></td>
-                            <td><?php echo $cliente["dni"];?></td>
-                            <td><?php echo $cliente["telefono"];?></td>
-                            <td><?php echo $cliente["edad"];?></td>
-                        </tr>
-                        <?php 
-                        endforeach
-                        ?>
 
                     </tbody>
                 </table>

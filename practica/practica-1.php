@@ -7,6 +7,9 @@ error_reporting(E_ALL);
 //Usamos foreach y file_put_conts
 function print_f3($variable){ //Recomendable usar esta funcion
     if(is_array($variable)){
+        $variable = fopen("archivo.txt","r");
+        fread($variable , $aNotas);
+        fclose($variable);
         //Si es un array, lo recorre y guardo el contenido en archivo "datos.txt"   
     } else{
         //Entonces es string, guardo el contenido en el archivo "datos.txt"
