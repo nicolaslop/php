@@ -1,1 +1,1 @@
-[{"dni":"1016402473","nombre":"nicolas lopez","telefono":"3113312756","correo":"lopeznicolas070794@hotmail.com"}]
+[{"dni":"1016402472","nombre":"nicolas lopez","telefono":"3113312746","correo":"lopeznicolas070794@hotmail.com","imagen":""},{"dni":"1016402445","nombre":"nicolas","telefono":"3113312456","correo":"nico@hotmail.com","imagen":""}]
