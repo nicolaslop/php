@@ -56,7 +56,7 @@ if($_POST){// si es postback almacenamos datos
             if(file_exists("imagenes/". $aClientes[$id]["imagen"])){
                 unlink("imagenes/". $aClientes[$id]["imagen"]);
             }
-         } 
+        } 
 
     //creamos un array
     $aClientes["id"]=array(
