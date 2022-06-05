@@ -113,7 +113,7 @@ $alumno2-> notaportfolio= 6;
 $alumno2-> notaproyecto = 8;
 $alumno2->imprimir();
 
-$docente = new docente();
+$docente = new docente () ;
 $docente->nombre = "andres buitrago";
 $docente-> especialidad = docente::ESPECIALIDAD_ECO;
 $docente->imprimir(); 
