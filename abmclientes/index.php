@@ -28,7 +28,6 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 
 }
 
-
 if($_POST){// si es postback almacenamos datos
     $dni =$_POST["txtDni"];
     $nombre =$_POST["txtNombre"];
@@ -135,7 +134,6 @@ if($_POST){// si es postback almacenamos datos
                         <a href="index.php" class="btn btn-danger my-2">NUEVO</a>
                     </div>
                 </form>
-   
             </div>
             <div class="col-6 sm-5 py-4">
                 <table class="table table-bordered shadow-border">
