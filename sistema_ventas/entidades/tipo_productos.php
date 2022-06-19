@@ -36,7 +36,7 @@ class TipoProducto
         //Instancia la clase mysqli con el constructor parametrizado
         $mysqli = new mysqli(Config::BBDD_HOST, Config::BBDD_USUARIO, Config::BBDD_CLAVE, Config::BBDD_NOMBRE, Config::BBDD_PORT);
         //Arma la query
-        $sql = "INSERT INTO tipoproductos (
+        $sql = "INSERT INTO tipo_productos (
                     nombre,
 
                 ) VALUES (
@@ -58,7 +58,7 @@ class TipoProducto
     {
 
         $mysqli = new mysqli(Config::BBDD_HOST, Config::BBDD_USUARIO, Config::BBDD_CLAVE, Config::BBDD_NOMBRE, Config::BBDD_PORT);
-        $sql = "UPDATE tipoproductos SET
+        $sql = "UPDATE tipo_productos SET
                 nombre = '$this->nombre '";
 
         if (!$mysqli->query($sql)) {
@@ -70,7 +70,7 @@ class TipoProducto
     public function eliminar()
     {
         $mysqli = new mysqli(Config::BBDD_HOST, Config::BBDD_USUARIO, Config::BBDD_CLAVE, Config::BBDD_NOMBRE, Config::BBDD_PORT);
-        $sql = "DELETE FROM tipoproductos WHERE idtipoproducto = " . $this->idtipoproducto;
+        $sql = "DELETE FROM tipo_productos WHERE idtipoproducto = " . $this->idtipoproducto;
         //Ejecuta la query
         if (!$mysqli->query($sql)) {
             printf("Error en query: %s\n", $mysqli->error . " " . $sql);
@@ -84,7 +84,7 @@ class TipoProducto
         $sql = "SELECT idtipoproducto,
                         nombre,
                         
-                FROM tipoproductos
+                FROM tipo_productos
                 WHERE idtipoproducto = $this->idtipoproducto";
         if (!$resultado = $mysqli->query($sql)) {
             printf("Error en query: %s\n", $mysqli->error . " " . $sql);
@@ -105,7 +105,7 @@ class TipoProducto
                     idtipoproducto,
                     nombre,
 
-                FROM tipoproductos";
+                FROM tipo_productos";
         if (!$resultado = $mysqli->query($sql)) {
             printf("Error en query: %s\n", $mysqli->error . " " . $sql);
         }

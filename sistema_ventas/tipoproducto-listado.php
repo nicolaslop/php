@@ -1,7 +1,7 @@
 <?php
 
 include_once "config.php";
-include_once "entidades/tipo_producto.php";
+include_once "entidades/tipoproducto.php";
 $pg = "Listado de tipos de productos";
 
 $TipoProducto = new TipoProducto();
