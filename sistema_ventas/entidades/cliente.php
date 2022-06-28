@@ -160,6 +160,7 @@ class Cliente
                     fk_idprovincia,
                     fk_idlocalidad,
                     domicilio
+                    
                 FROM clientes";
         if (!$resultado = $mysqli->query($sql)) {
             printf("Error en query: %s\n", $mysqli->error . " " . $sql);
