@@ -12,17 +12,21 @@ if ($_POST) {
     if (isset($_POST["btnGuardar"])) {
         if (isset($_GET["id"]) && $_GET["id"] > 0) {
             //Actualizo un tipo de producto
-            $tipoproducto->actualizar();
+            $tipoproductos->actualizar();
         } else {
             //Es nuevo
             $tipoproductos->insertar();
         }
+
         $msg["texto"] = "Guardado correctamente";
         $msg["codigo"] = "alert-success";
     } else if (isset($_POST["btnBorrar"])) {
         $tipoproductos->eliminar();
         header("Location: tipoproducto-listado.php");
     }
+}
+if(isset($_GET["id"]) && $_GET["id"] > 0){
+    $tipoproducto ->obtenerPorId();
 }
 include_once("header.php");
 
@@ -31,7 +35,7 @@ include_once("header.php");
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Cliente</h1>
+    <h1 class="h3 mb-4 text-gray-800">Tipo de producto</h1>
     <?php if (isset($msg)) : ?>
         <div class="row">
             <div class="col-12">

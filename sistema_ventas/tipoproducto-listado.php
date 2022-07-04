@@ -1,8 +1,8 @@
 <?php
 include_once("config.php");
-include_once("entidades/tipoproducto.php");
+include_once("entidades/tipoproductos.php");
 
-$tipoProducto = new TipoProducto();
+$tipoProducto = new TipoProductos();
 $aTipoProductos = $tipoProducto->obtenerTodos();
 
 include_once("header.php");

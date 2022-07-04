@@ -1,6 +1,6 @@
 <?php
 //siempre que utilicemos variable session utilizamos session sart
-//session_start();
+session_start();
 //preguntamos si es postback
 if($_POST){
   if(isset($_POST["btnCerrar"]));
