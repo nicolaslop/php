@@ -1,5 +1,6 @@
 <?php
 
+
 include_once "config.php";
 include_once "entidades/producto.php";
 
@@ -36,7 +37,7 @@ include_once("header.php");
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Tipo de producto</h1>
+    <h1 class="h3 mb-4 text-gray-800">productos</h1>
     <?php if (isset($msg)) : ?>
         <div class="row">
             <div class="col-12">
